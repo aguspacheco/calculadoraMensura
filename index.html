@@ -11,43 +11,111 @@
     />
     <title>Calculadora DGCEIT 📊</title>
 
-    <script defer src="./main.js"></script>
+    <script defer src="/calculadora.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="detalle"></div>
       <div class="formulario">
+        <div class="form-group row">
+          <div class="col-sm-2.5">
+            <div class="form-check-inline p-3">
+              <input
+                class="form-check-inline"
+                type="checkbox"
+                id="urbana"
+                value="urbana"
+                onclick="seleccionarCheckbox('urbana')"
+              />
+              <label class="form-check-label" for="urbana"> Urbana </label>
+            </div>
+            <div class="form-check-inline p-3">
+              <input
+                class="form-check-inline"
+                type="checkbox"
+                id="rural"
+                value="rural"
+                onclick="seleccionarCheckbox('rural')"
+              />
+              <label class="form-check-label" for="rural"> Rural </label>
+            </div>
+            <div class="form-check-inline p-3">
+              <input
+                class="form-check-inline"
+                type="checkbox"
+                id="subrural"
+                value="subrural"
+                onclick="seleccionarCheckbox('subrural')"
+              />
+              <label class="form-check-label" for="subrural"> Subrural </label>
+            </div>
+          </div>
+        </div>
         <form>
           <div class="form-group row">
-            <label for="parcela_origen" class="col-sm-2 col-form-label">Parcela origen</label>
+            <label for="parcela_origen" class="col-sm-2 col-form-label"
+              >Parcelas origen</label
+            >
             <div class="col-sm-2.5">
-              <input type="number" id="parcela_origen" autofocus placeholder="Escriba un número" class="form-control" min="0" required>
+              <input
+                type="number"
+                id="parcela_origen"
+                autofocus
+                placeholder="Escriba un número"
+                class="form-control"
+                min="0"
+                required
+              />
             </div>
           </div>
           <div class="form-group row">
-            <label for="parcela_resultante" class="col-sm-2 col-form-label">Parcela resultante</label>
+            <label for="parcela_resultante" class="col-sm-2 col-form-label"
+              >Parcelas resultante</label
+            >
             <div class="col-sm-2.5">
-              <input type="number" id="parcela_resultante" autofocus placeholder="Escriba un número" class="form-control" min="0" required>
+              <input
+                type="number"
+                id="parcela_resultante"
+                autofocus
+                placeholder="Escriba un número"
+                class="form-control"
+                min="0"
+                required
+              />
             </div>
-          </div>  
+          </div>
           <div class="form-group row">
-            <label for="ddjj" class="col-sm-2 col-form-label">Declaración jurada</label>
+            <label for="unidad_funcional" class="col-sm-2 col-form-label">
+              Unidad funcional</label
+            >
             <div class="col-sm-2.5">
-              <input type="number" id="ddjj" autofocus placeholder="Escriba un número" class="form-control" min="0" required>
+              <input
+                type="number"
+                id="unidad_funcional"
+                autofocus
+                placeholder="Escriba un número"
+                class="form-control"
+                min="0"
+                required
+              />
             </div>
-          </div>  
+          </div>
           <div class="form-group row">
-            <label for="preferencial" class="col-sm-3 col-form-label">Preferencial</label>
+            <label for="preferencial" class="col-sm-3 col-form-label"
+              >Preferencial</label
+            >
             <div class="col-sm-2">
-              <input type="checkbox" id="preferencial" class="form-check-input">
+              <input
+                type="checkbox"
+                id="preferencial"
+                class="form-check-input"
+              />
             </div>
           </div>
           <div class="d-flex justify-content-left">
             <div class="btn-group">
-              <button
-                type="submit"
-                class="btn btn-success mx-2"> 
-                Calcular
+              <button type="submit" class="btn btn-success mx-2">
+                Cálcular
               </button>
               <button
                 type="button"
@@ -68,18 +136,27 @@
         </form>
       </div>
       <div class="table-responsive">
-        <table id="tabla" class="table table-striped table-bordered" style="display: none;">
-          <thead>
+        <table id="tabla" class="table table-bordered" style="display: none">
+          <thead class="thead-dark">
             <tr>
-              <th style="padding-right: 10px;">Parcela Origen</th>
-              <th style="padding-right: 10px;">Parcela Resultante</th>
-              <th>DDJJ</th>
-              <th>El total a pagar es:</th>
+              <th style="padding-right: 10px">Parcelas Origen</th>
+              <th style="padding-right: 10px">Parcelas Resultante</th>
+              <th style="padding-right: 10px">Unidad Funcional</th>
+              <th style="padding-right: 10px">Preferencial</th>
+              <th>El total a abonar es:</th>
             </tr>
           </thead>
         </table>
       </div>
-      <div class="resultado" id="resultado" style="display: block;"></div>
-    <button type="button" id="btnVolver" class="btn btn-secondary mx-2" style="display: none;">Volver</button>
+      <div class="resultado" id="resultado" style="display: block"></div>
+      <button
+        type="button"
+        id="btnVolver"
+        class="btn btn-secondary mx-2"
+        style="display: none"
+      >
+        Volver
+      </button>
+    </div>
   </body>
 </html>
